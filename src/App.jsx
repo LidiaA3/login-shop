@@ -7,7 +7,7 @@ import User from "./views/user/User"
 import React, { useEffect, useState } from "react"
 
 
-const productContext = React.createContext({
+export const productContext = React.createContext({
   allProducts: [],
 });
 
