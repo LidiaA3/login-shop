@@ -4,11 +4,27 @@ import Login from "./views/login/Login"
 import Product from "./views/product/Product"
 import Shop from "./views/shop/Shop"
 import User from "./views/user/User"
+import React, { useEffect, useState } from "react"
+
+
+const productContext = React.createContext({
+  allProducts: [],
+});
 
 function App() {
 
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    fetch('https://fakestoreapi.com/products')
+      .then(res => res.json())
+      .then(data => setProducts(data))
+  }, [])
+
   return (
-    <>
+    <productContext.Provider value={{
+      allProducts: products,
+    }}>
       <h1>This is my shop app</h1>
       <Routes>
         <Route path='/' element={<Shop />} />
@@ -23,7 +39,7 @@ function App() {
       <Link to='/user'>User</Link>
       <Link to='/cart'>Cart</Link>
       <Link to='/login'>Login</Link>
-    </>
+    </productContext.Provider>
   )
 }
 
