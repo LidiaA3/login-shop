@@ -8,7 +8,12 @@ function Shop() {
     return (
       <>
         <h2>This is my shop</h2>
-        {console.log(allProducts)}
+        <main>
+          {console.log(allProducts)}
+          {allProducts.map((item) => {
+            return <Card img={item.image} title={item.title} price={item.price} />;
+          })}
+        </main>
 
       </>
     )
