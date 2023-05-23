@@ -1,3 +1,4 @@
+import './Card.scss'
 /**
  * 
  * @param {img | title | price} props 
@@ -8,7 +9,7 @@ function Card(props) {
     return (
         <>
             <article className="card">
-                <div className="card__img">{props.img}</div>
+                <div className="card__img"><img src={props.img} alt={props.title} /></div>
                 <div className="card__contents">
                     <h3>{props.title}</h3>
                     <p>{props.price}</p>
