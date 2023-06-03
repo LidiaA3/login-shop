@@ -1,3 +1,5 @@
+@import '../../scss/variables';
+
 .card {
     display: flex;
     flex-direction: column;
@@ -9,7 +11,7 @@
     &__img {
         width: calc(100% - 4rem);
         height: 10rem;
-        background-color: rgb(230, 230, 254);
+        background-color: $color-blue-lighter;
         padding: 2rem;
 
         & img {
@@ -21,7 +23,17 @@
     }
 
     &__contents {
-        padding: 1rem;
-        width: calc(100% - 2rem);
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        padding: 2rem;
+        width: calc(100% - 4rem);
+    }
+    &__buttons {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        gap: 1rem;
     }
 }

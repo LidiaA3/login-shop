@@ -12,7 +12,7 @@ function Shop() {
         <h2>This is my shop</h2>
         <main className='shop'>
           {allProducts.map((item) => {
-            return <Card key={item.id} img={item.image} title={item.title} price={item.price} />;
+            return <Card key={item.id} img={item.image} title={item.title} price={item.price} productId={item.id} />;
           })}
         </main>
 

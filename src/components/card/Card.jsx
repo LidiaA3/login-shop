@@ -1,3 +1,4 @@
+import Button from '../button/Button';
 import './Card.scss'
 /**
  * 
@@ -12,8 +13,11 @@ function Card(props) {
                 <div className="card__img"><img src={props.img} alt={props.title} /></div>
                 <div className="card__contents">
                     <h3>{props.title}</h3>
-                    <p>{props.price}</p>
-                    <button>Comprar</button>
+                    <p>{props.price}€</p>
+                    <div className="card__buttons">
+                        <Button text='More info' type='secondary' isLink={true} goTo={`/product/${props.productId}`} />
+                        <Button text='Add cart' />
+                    </div>
                 </div>
             </article>
         </>

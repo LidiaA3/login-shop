@@ -1,0 +1,23 @@
+@import '../../scss/variables';
+
+button,
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    background-color: $color-blue-lighter;
+    border: .1em solid $color-blue-light;
+    border-radius: .5em;
+    padding: .5em 1em;
+
+    &--secondary {
+        background-color: transparent;
+    }
+}
+
+.linkAsBtn {
+    text-decoration: none;
+    color: inherit;
+}
