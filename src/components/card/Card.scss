@@ -11,7 +11,7 @@
     &__img {
         width: calc(100% - 4rem);
         height: 10rem;
-        background-color: $color-blue-lighter;
+        background-color: transparentize($color-blue-lighter, .8);
         padding: 2rem;
 
         & img {
@@ -22,6 +22,10 @@
         }
     }
 
+    &__tittle {
+        word-wrap: break-word;
+    }
+
     &__contents {
         flex: 1;
         display: flex;
@@ -30,6 +34,7 @@
         width: calc(100% - 4rem);
     }
     &__buttons {
+        margin-top: 1rem;
         flex: 1;
         display: flex;
         justify-content: center;

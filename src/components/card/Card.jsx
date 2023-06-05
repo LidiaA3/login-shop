@@ -12,7 +12,7 @@ function Card(props) {
             <article className="card">
                 <div className="card__img"><img src={props.img} alt={props.title} /></div>
                 <div className="card__contents">
-                    <h3>{props.title}</h3>
+                    <h3 className='h5 card__tittle'>{props.title}</h3>
                     <p>{props.price}€</p>
                     <div className="card__buttons">
                         <Button text='More info' type='secondary' isLink={true} goTo={`/product/${props.productId}`} />

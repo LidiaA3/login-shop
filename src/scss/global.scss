@@ -1,11 +1,19 @@
 @import './variables';
+@import './functions';
 @import './typography';
 @import './links';
+@import './utilities';
+
+::selection {
+    background-color: $color-blue-lighter;
+}
 
 html {
     font-size: 62.5%;
 }
 
 body {
-    font-size: 1.5rem;
+    margin: 0;
+    font-size: fs(medium);
+    font-family: $font-family;
 }

@@ -7,10 +7,40 @@ h6, .h6 {
     margin: 1rem 0;
 }
 
+h1,
+.h1 {
+    font-size: fs(huge);
+}
+
+h2,
+.h2 {
+    font-size: fs(x-big);
+}
+
+h3,
+.h3 {
+    font-size: fs(x-big);
+}
+
+h4,
+.h4 {
+    font-size: fs(x-large);
+}
+
+h5,
+.h5 {
+    font-size: fs(large);
+}
+
+h6,
+.h6 {
+    font-size: fs(medium);
+}
+
 p {
     margin: 0;
 }
 
 p + p {
-    margin-bottom: 1rem;
+    margin-top: 1rem;
 }

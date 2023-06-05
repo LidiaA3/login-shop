@@ -1,9 +1,20 @@
 function Login() {
 
     return (
-      <>
-        <h2>This is my login site</h2>
-      </>
+      <div className="login">
+        <h1>Login</h1>
+
+        <p>Texto gracioso y descriptivo</p>
+
+        <label htmlFor="user">User:
+          <input type="text" id="user" />
+        </label>
+
+        <label htmlFor="password">Password:
+          <input type="password" id="password" />
+        </label>
+
+      </div>
     )
   }
   
