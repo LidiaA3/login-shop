@@ -2,6 +2,7 @@
 @import './functions';
 @import './typography';
 @import './links';
+@import './forms';
 @import './utilities';
 
 ::selection {
@@ -16,4 +17,16 @@ body {
     margin: 0;
     font-size: fs(medium);
     font-family: $font-family;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+    padding: 2rem;
+    position: relative;
 }

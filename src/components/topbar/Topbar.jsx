@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './Topbar.scss';
 
 function Topbar(props) {
@@ -11,10 +12,10 @@ function Topbar(props) {
 
                 {console.log(props)}
                 
-                {props.userLogin && <div className="topbar__user">
+                {props.userLogin ? <div className="topbar__user">
                     <p>Hi Nora</p>
                     <img src="/userimg.webp" alt="Imagen de usuario" />
-                </div>}
+                </div> : <Link to='/login'>Login</Link>}
             </div>
         </div>
     );

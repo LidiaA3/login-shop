@@ -15,7 +15,7 @@ function Card(props) {
                     <h3 className='h5 card__tittle'>{props.title}</h3>
                     <p>{props.price}€</p>
                     <div className="card__buttons">
-                        <Button text='More info' type='secondary' isLink={true} goTo={`/product/${props.productId}`} />
+                        <Button onClick={() => window.scrollTo({top: 0})} text='More info' type='secondary' isLink={true} goTo={`/product/${props.productId}`} />
                         <Button text='Add cart' />
                     </div>
                 </div>

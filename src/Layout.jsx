@@ -12,7 +12,7 @@ export const productContext = React.createContext(
 function Layout() {
 
   const [products, setProducts] = useState([]);
-  const [userIsLogin, setUserIsLogin] = useState(true);
+  const [userIsLogin, setUserIsLogin] = useState(false);
 
   useEffect(() => {
     fetch('https://fakestoreapi.com/products')
@@ -29,13 +29,15 @@ function Layout() {
 
       <Topbar userLogin={userIsLogin} />
 
-      <Outlet />
+      <main>
+        <Outlet />
 
-      <Link to='/'>Shop</Link>
-      <Link to='/product'>Product</Link>
-      <Link to='/user'>User</Link>
-      <Link to='/cart'>Cart</Link>
-      <Link to='/login'>Login</Link>
+        <Link to='/'>Shop</Link>
+        <Link to='/product'>Product</Link>
+        <Link to='/user'>User</Link>
+        <Link to='/cart'>Cart</Link>
+        <Link to='/login'>Login</Link>
+      </main>
 
       <Footer />
     </productContext.Provider>
