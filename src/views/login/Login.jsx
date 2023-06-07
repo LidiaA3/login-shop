@@ -1,20 +1,30 @@
 import { useContext, useState } from 'react';
 import './Login.scss';
-import { productContext } from '../../Layout';
+import { loginShopContext } from '../../Layout';
+import Button from '../../components/button/Button';
 
 function Login() {
 
-  const setUserIsLogin = useContext(productContext).setUserIsLogin;
+  const userIsLogin = useContext(loginShopContext).userIsLogin;
+  const setUserIsLogin = useContext(loginShopContext).setUserIsLogin;
 
   const [userInput, setUserInput] = useState('');
   const [passwordInput, setPasswordInput] = useState('');
 
   function validateForm() {
-    console.log(userInput);
-    console.log(passwordInput);
     if(userInput == 'Nora Dufort' && passwordInput == 'misifu') {
       setUserIsLogin(true);
     }
+  }
+
+  if (userIsLogin) {
+    return <div className='login__true'>
+      <p>You are already login</p>
+      <div className="login__true__buttons">
+        <Button isLink={true} goTo='/' text='Start shopping' />
+        <Button isLink={true} goTo='/user' text='Watch profile' type='secondary' />
+      </div>
+    </div>
   }
 
     return (
@@ -25,7 +35,7 @@ function Login() {
 
         <form action="">
           <label htmlFor="user">User:
-            <input type="text" id="user" placeholder='Which is my full name?' onChange={(e) => setUserInput(e.target.value)} />
+            <input type="text" id="user" placeholder='Which is the user full name?' onChange={(e) => setUserInput(e.target.value)} />
           </label>
 
           <label htmlFor="password">Password:

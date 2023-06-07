@@ -1,11 +1,11 @@
 import './Shop.scss'
 import { useContext } from "react"
-import { productContext } from "../../Layout";
+import { loginShopContext } from "../../Layout";
 import Card from "../../components/card/Card";
 
 function Shop() {
 
-    const allProducts = useContext(productContext).allProducts;
+    const allProducts = useContext(loginShopContext).allProducts;
 
     return (
       <>

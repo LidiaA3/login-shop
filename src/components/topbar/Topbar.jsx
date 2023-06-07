@@ -1,7 +1,14 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import './Topbar.scss';
+import Button from '../button/Button';
+import { useContext } from 'react';
+import { loginShopContext } from '../../Layout';
 
 function Topbar(props) {
+
+    const setUserIsLogin = useContext(loginShopContext).setUserIsLogin;
+    const location = useLocation().pathname;
+
     return (
         <div className='topbar'>
             <div className="topbar__logo">
@@ -10,12 +17,15 @@ function Topbar(props) {
             <div className="topbar__items">
                 Carrito
 
-                {console.log(props)}
+                {props.userLogin ? <Button type='ternary' text='Log out' handleClick={() => setUserIsLogin(false)} /> : (location === '/login' ? '' : <Link to='/login'>Log in</Link> )}
+
+                {console.log(location)}
                 
                 {props.userLogin ? <div className="topbar__user">
                     <p>Hi Nora</p>
-                    <img src="/userimg.webp" alt="Imagen de usuario" />
-                </div> : <Link to='/login'>Login</Link>}
+                    <Link to='/user'><img src="/userimg.webp" alt="Imagen de usuario" /></Link>
+                </div> : ''}
+
             </div>
         </div>
     );

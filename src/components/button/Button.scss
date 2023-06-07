@@ -24,6 +24,18 @@ button,
             background-color: $color-gray-lighter;
         }
     }
+
+    &--ternary {
+        color: $color-blue;
+        text-decoration: underline;
+        background-color: transparent;
+        border: none;
+
+        &:hover {
+            color: $color-blue-darken;
+            background-color: transparent;
+        }
+    }
 }
 
 .linkAsBtn {

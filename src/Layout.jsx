@@ -4,7 +4,7 @@ import Topbar from "./components/topbar/Topbar";
 import Footer from "./components/footer/Footer";
 
 
-export const productContext = React.createContext(
+export const loginShopContext = React.createContext(
   { allProducts: [] },
   { userIsLogin: false, setUserIsLogin: () => {} }
   );
@@ -21,10 +21,11 @@ function Layout() {
   }, [])
 
   return (
-    <productContext.Provider value={{
+    <loginShopContext.Provider value={{
       allProducts: products,
       userIsLogin: userIsLogin,
       setUserIsLogin: setUserIsLogin,
+
     }}>
 
       <Topbar userLogin={userIsLogin} />
@@ -32,15 +33,17 @@ function Layout() {
       <main>
         <Outlet />
 
-        <Link to='/'>Shop</Link>
-        <Link to='/product'>Product</Link>
-        <Link to='/user'>User</Link>
-        <Link to='/cart'>Cart</Link>
-        <Link to='/login'>Login</Link>
+        <div>
+          <Link to='/'>Shop</Link>
+          <Link to='/product'>Product</Link>
+          <Link to='/user'>User</Link>
+          <Link to='/cart'>Cart</Link>
+          <Link to='/login'>Login</Link>
+        </div>
       </main>
 
       <Footer />
-    </productContext.Provider>
+    </loginShopContext.Provider>
   )
 }
 

@@ -29,4 +29,6 @@ main {
     flex: 1;
     padding: 2rem;
     position: relative;
+    display: flex;
+    flex-direction: column;
 }
