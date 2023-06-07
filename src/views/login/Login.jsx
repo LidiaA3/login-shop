@@ -2,6 +2,7 @@ import { useContext, useState } from 'react';
 import './Login.scss';
 import { loginShopContext } from '../../Layout';
 import Button from '../../components/button/Button';
+import Alert from '../../components/alert/Alert';
 
 function Login() {
 
@@ -11,9 +12,19 @@ function Login() {
   const [userInput, setUserInput] = useState('');
   const [passwordInput, setPasswordInput] = useState('');
 
+  const [showAlertUser, setShowAlertUser] = useState(false);
+  const [showAlertPassword, setShowAlertPassword] = useState(false);
+
   function validateForm() {
     if(userInput == 'Nora Dufort' && passwordInput == 'misifu') {
       setUserIsLogin(true);
+    } else {
+      if(userInput != 'Nora Dufort') {
+        setShowAlertUser(true);
+      }
+      if(passwordInput != 'misifu') {
+        setShowAlertPassword(true);
+      }
     }
   }
 
@@ -38,12 +49,18 @@ function Login() {
           <input type="text" id="user" placeholder='Which is the user full name?' onChange={(e) => setUserInput(e.target.value)} />
         </label>
 
+
         <label htmlFor="password">Password:
           <input type="password" id="password" placeholder='I have a magnific cat!' onChange={(e) => setPasswordInput(e.target.value)} />
         </label>
 
         <input className='btn' type="sent" defaultValue='Validate' onClick={validateForm} />
       </form>
+
+      <div className="alert">
+        {showAlertUser && <Alert text="The user name doesn't match" close={setShowAlertUser} />}
+        {showAlertPassword && <Alert text="The password doesn't match" close={setShowAlertPassword} />}
+      </div>
 
       <details className="login__popup">
         <summary className='login__popup__summary'>Show more</summary>
