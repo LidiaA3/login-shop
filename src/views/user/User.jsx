@@ -23,6 +23,9 @@ function User() {
           <h2 className='h1 color-blue'>Nora Dufort</h2>
           <p>I love cats and books. I have a cat named Misifu that represents my life.</p>
           <p>I love shopping and go out with my friends.</p>
+          <div className="user__actions">
+            <Button isLink={true} goTo='/' text='Go shopping' />
+          </div>
         </div>
       </div>
     )

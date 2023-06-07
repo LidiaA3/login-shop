@@ -12,6 +12,9 @@ function Product() {
 
     return (
       <div className="product">
+        <div className="backBtn">
+          <Button text='Continue shopping' type='secondary' />
+        </div>
         <div className="product__img">
           <img src={thisProduct.image} alt={thisProduct.title} />
         </div>

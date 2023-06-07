@@ -24,6 +24,11 @@
 
     &__tittle {
         word-wrap: break-word;
+        flex: 1;
+    }
+
+    &__price {
+        text-align: end;
     }
 
     &__contents {
@@ -35,7 +40,6 @@
     }
     &__buttons {
         margin-top: 1rem;
-        flex: 1;
         display: flex;
         justify-content: center;
         align-items: end;

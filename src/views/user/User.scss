@@ -22,6 +22,10 @@
         text-align: center;
     }
 
+    &__actions {
+        padding: 2rem 0;
+    }
+
     &__false {
         display: flex;
         flex-direction: column;

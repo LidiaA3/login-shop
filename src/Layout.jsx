@@ -42,14 +42,6 @@ function Layout() {
 
       <main>
         <Outlet />
-
-        <div>
-          <Link to='/'>Shop</Link>
-          <Link to='/product'>Product</Link>
-          <Link to='/user'>User</Link>
-          <Link to='/cart'>Cart</Link>
-          <Link to='/login'>Login</Link>
-        </div>
       </main>
 
       <Footer />
