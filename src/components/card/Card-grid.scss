@@ -1,4 +1,4 @@
-.shop {
+.grid {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 1rem;
@@ -6,25 +6,25 @@
 }
 
 @media all and (min-width: 450px) {
-    .shop {
+    .grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media all and (min-width: 600px) {
-    .shop {
+    .grid {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
 @media all and (min-width: 750px) {
-    .shop {
+    .grid {
         grid-template-columns: repeat(4, 1fr);
     }
 }
 
 @media all and (min-width: 800px) {
-    .shop {
+    .grid {
         padding: 0 calc((100% - 80rem) / 2);
     }
 }

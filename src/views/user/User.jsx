@@ -14,21 +14,21 @@ function User() {
     </div>
   }
 
-    return (
-      <div className="user">
-        <div className="user__img">
-          <img src="/userimg.webp" alt="Imagen de usuario" />
-        </div>
-        <div className="user__contents">
-          <h2 className='h1 color-blue'>Nora Dufort</h2>
-          <p>I love cats and books. I have a cat named Misifu that represents my life.</p>
-          <p>I love shopping and go out with my friends.</p>
-          <div className="user__actions">
-            <Button isLink={true} goTo='/' text='Go shopping' />
-          </div>
+  return (
+    <div className="user">
+      <div className="user__img">
+        <img src="/userimg.webp" alt="Imagen de usuario" />
+      </div>
+      <div className="user__contents">
+        <h2 className='h1 color-blue'>Nora Dufort</h2>
+        <p>I love cats and books. I have a cat named Misifu that represents my life.</p>
+        <p>I love shopping and go out with my friends.</p>
+        <div className="user__actions">
+          <Button isLink={true} goTo='/' text='Go shopping' />
         </div>
       </div>
-    )
-  }
+    </div>
+  )
+}
   
-  export default User
+export default User

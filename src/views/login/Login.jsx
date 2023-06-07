@@ -27,31 +27,31 @@ function Login() {
     </div>
   }
 
-    return (
-      <div className="login">
-        <h1>Login</h1>
+  return (
+    <div className="login">
+      <h1>Login</h1>
 
-        <p className='login__text'>Hello! Welcome to the Notch login! To access the website and be able to make purchases you will need to enter the contact details. Be careful, these are hidden! Discover the clues and start shopping.</p>
+      <p className='login__text'>Hello! Welcome to the Notch login! To access the website and be able to make purchases you will need to enter the contact details. Be careful, these are hidden! Discover the clues and start shopping.</p>
 
-        <form action="">
-          <label htmlFor="user">User:
-            <input type="text" id="user" placeholder='Which is the user full name?' onChange={(e) => setUserInput(e.target.value)} />
-          </label>
+      <form action="">
+        <label htmlFor="user">User:
+          <input type="text" id="user" placeholder='Which is the user full name?' onChange={(e) => setUserInput(e.target.value)} />
+        </label>
 
-          <label htmlFor="password">Password:
-            <input type="password" id="password" placeholder='I have a magnific cat!' onChange={(e) => setPasswordInput(e.target.value)} />
-          </label>
+        <label htmlFor="password">Password:
+          <input type="password" id="password" placeholder='I have a magnific cat!' onChange={(e) => setPasswordInput(e.target.value)} />
+        </label>
 
-          <input className='btn' type="sent" defaultValue='Validate' onClick={validateForm} />
-        </form>
+        <input className='btn' type="sent" defaultValue='Validate' onClick={validateForm} />
+      </form>
 
-        <details className="login__popup">
-          <summary className='login__popup__summary'>Show more</summary>
-          <p>Hi! My name is Nora Dufort. I love cats and books. I have a cat named Misifu that represents my life.</p>
-        </details>
+      <details className="login__popup">
+        <summary className='login__popup__summary'>Show more</summary>
+        <p>Hi! My name is Nora Dufort. I love cats and books. I have a cat named Misifu that represents my life.</p>
+      </details>
 
-      </div>
-    )
-  }
+    </div>
+  )
+}
   
-  export default Login
+export default Login

@@ -24,9 +24,9 @@ function Layout() {
   }, [])
 
   useEffect(() => {
-    productsAtCart.map(item => {
-      setNumberAtCart(numberAtCart + item.amount);
-    })
+    let amount = [];
+    productsAtCart.map(item => amount.push(item.amount))
+    setNumberAtCart(amount.reduce((acc, cur) => acc + cur, 0));
   }, [productsAtCart])
 
   return (

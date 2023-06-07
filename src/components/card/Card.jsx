@@ -18,14 +18,18 @@ function Card(props) {
     return (
         <>
             <article className="card">
+                {props.showAmount && <div className="card__bullet">{props.amount}</div>}
                 <div className="card__img"><img src={props.img} alt={props.title} /></div>
                 <div className="card__contents">
                     <h3 className='h5 card__tittle'>{props.title}</h3>
                     <p className='card__price'>{props.price}€</p>
                     <div className="card__buttons">
-                        <Button hanleClick={handleGoTop} text='More info' type='secondary' isLink={true} goTo={`/product/${props.productId}`} />
+                        <Button handleClick={handleGoTop} text='More info' type='secondary' isLink={true} goTo={`/product/${props.productId}`} />
                         <Button handleClick={() => props.handleAddProduct(props.productId)} text='Add cart' />
                     </div>
+                    {props.showExtraButtons && <div className="card__extraButtons">
+                        <Button additionalClasses='btn--full' handleClick={() => props.handleDeleteProduct(props.productId)} text='Delete product' type='secondary' />
+                    </div>}
                 </div>
             </article>
         </>
