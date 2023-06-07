@@ -7,6 +7,14 @@ import './Card.scss'
  */
 
 function Card(props) {
+
+    function handleGoTop () {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+        })
+    }
+
     return (
         <>
             <article className="card">
@@ -15,8 +23,8 @@ function Card(props) {
                     <h3 className='h5 card__tittle'>{props.title}</h3>
                     <p>{props.price}€</p>
                     <div className="card__buttons">
-                        <Button onClick={() => window.scrollTo({top: 0})} text='More info' type='secondary' isLink={true} goTo={`/product/${props.productId}`} />
-                        <Button text='Add cart' />
+                        <Button hanleClick={handleGoTop} text='More info' type='secondary' isLink={true} goTo={`/product/${props.productId}`} />
+                        <Button handleClick={() => props.handleAddProduct(props.productId)} text='Add cart' />
                     </div>
                 </div>
             </article>
