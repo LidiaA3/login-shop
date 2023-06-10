@@ -1,8 +1,9 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { useParams } from "react-router-dom"
 import { loginShopContext } from "../../Layout";
 import Button from "../../components/button/Button";
 import './Product.scss';
+import Alert from "../../components/alert/Alert";
 
 function Product() {
 
@@ -13,8 +14,15 @@ function Product() {
   const productsAtCart = useContext(loginShopContext).productsAtCart;
   const setProductsAtCart = useContext(loginShopContext).setProductsAtCart;
 
+  const userIsLogin = useContext(loginShopContext).userIsLogin;
+  const [showAlertLogin, setShowAlertLogin] = useState(false);
+
   function handleAddProduct (id) {
-    console.log(`Add product width id ${id} to cart`);
+    if(!userIsLogin) {
+      setShowAlertLogin(true);
+      return;
+    }
+    
     const existProduct = productsAtCart.find(item => item.productId == id);
 
     if(existProduct) {
@@ -42,6 +50,10 @@ function Product() {
           <Button isLink={true} goTo='/' text='Continue shopping' type='secondary' />
           <Button handleClick={() => handleAddProduct(thisProduct.id)} text='Add to cart' />
         </div>
+      </div>
+
+      <div className="alert">
+        {showAlertLogin && <Alert text="You are not login" close={setShowAlertLogin} />}
       </div>
     </div>
   )

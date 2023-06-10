@@ -6,7 +6,7 @@ function Button(props) {
         <>
         {
             props.isLink ? 
-                <Link to={props.goTo} className={`btn linkAsBtn ${props.additionalClasses} ${props.type ? `btn--${props.type}` : ''}`}>{props.text}</Link>
+                <Link onClick={props.handleClick} to={props.goTo} className={`btn linkAsBtn ${props.additionalClasses} ${props.type ? `btn--${props.type}` : ''}`}>{props.text}</Link>
             :
                 <button onClick={props.handleClick} className={`btn ${props.additionalClasses} ${props.type ? `btn--${props.type}` : ''}`}>{props.text}</button>
 

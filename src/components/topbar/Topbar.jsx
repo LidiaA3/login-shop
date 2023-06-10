@@ -10,14 +10,21 @@ function Topbar(props) {
     const setUserIsLogin = useContext(loginShopContext).setUserIsLogin;
     const location = useLocation().pathname;
 
+    function handleGoTop () {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+        })
+    }
+
     return (
         <div className='topbar'>
             <div className="topbar__logo">
-                <Link to='/'><img src="/logo.svg" alt="Logo Notch online shop" /></Link>
+                <Link onClick={handleGoTop} to='/'><img src="/logo.svg" alt="Logo Notch online shop" /></Link>
             </div>
             <div className="topbar__items">
                 <div className="topbar__cart">
-                    <Link to='/cart'><Icon icon='cart' /></Link>
+                    <Link onClick={handleGoTop} to='/cart'><Icon icon='cart' /></Link>
                     {props.userLogin && <p className='topbar__cart__number'>{props.numberAtCart}</p>}
                 </div>
 
@@ -25,7 +32,7 @@ function Topbar(props) {
                 
                 {props.userLogin ? <div className="topbar__user">
                     <p>Hi Nora</p>
-                    <Link to='/user'><img src="/userimg.webp" alt="Imagen de usuario" /></Link>
+                    <Link onClick={handleGoTop} to='/user'><img src="/userimg.webp" alt="Imagen de usuario" /></Link>
                 </div> : ''}
 
             </div>

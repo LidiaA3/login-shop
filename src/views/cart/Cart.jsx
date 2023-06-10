@@ -1,6 +1,6 @@
 import './Cart.scss';
 import '../../components/card/Card-grid.scss';
-import { useContext } from "react"
+import { useContext, useEffect, useState } from "react"
 import { loginShopContext } from "../../Layout"
 import Card from "../../components/card/Card";
 import Button from '../../components/button/Button';
@@ -54,16 +54,28 @@ function Cart() {
     </div>
   }
 
-  
+  const [purchaseSummary, setPurchaseSummary] = useState(0);
+  let arrayPurchase = [];
+
+  useEffect(() => {
+    setPurchaseSummary(arrayPurchase.reduce((acc, cur) => acc + cur, 0).toFixed(2));
+  }, [arrayPurchase])
 
   return (
     <>
-      <h2>This is my cart</h2>
       <article className="grid">
         {productsAtCart.map(item => {
           const product = allProducts.find(prod => prod.id == item.productId);
+          arrayPurchase.push(product.price * item.amount);
           return <Card key={item.productId} title={product.title} img={product.image} price={product.price} productId={product.id} showExtraButtons={true} showAmount={true} amount={item.amount} handleAddProduct={handleAddProduct} handleDeleteProduct={handleDeleteProduct} />
         })}
+      </article>
+
+      <hr />
+
+      <article className='cart__summary'>
+        <p className="h3">Purchase summary</p>
+        <p className="h3">{purchaseSummary}€</p>
       </article>
     </>
   )
