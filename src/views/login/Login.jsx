@@ -62,8 +62,8 @@ function Login() {
         {showAlertPassword && <Alert text="The password doesn't match" close={setShowAlertPassword} />}
       </div>
 
-      <details className="login__popup login__popup--right">
-        <summary className='login__popup__summary'>Show more</summary>
+      <details className="login__popup">
+        <summary className='login__popup__summary'>Login clues</summary>
         <p>Hi! My name is Nora Dufort. I love cats and books. I have a cat named Misifu that represents my life.</p>
       </details>
 

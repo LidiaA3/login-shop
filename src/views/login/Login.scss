@@ -6,7 +6,7 @@
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    padding: 2rem 0;
+    padding: 2rem 0 3rem;
 
     &__text {
         max-width: 30rem;
@@ -16,6 +16,7 @@
     &__popup {
         position: absolute;
         bottom: 0;
+        right: 2rem;
         width: 15rem;
         padding: .5rem 2rem;
         border: .1em solid $color-blue-lighter;
@@ -24,12 +25,23 @@
         color: $color-blue-lighter;
         transition: all 1s ease-in-out;
 
-        &--right {
-            right: 2rem;
-        }
-
         &--left {
-            left: 2rem;
+            left: 0;
+            bottom: 1rem;
+            border-radius: 0 .5em .5em 0;
+            border-left: none;
+            border-bottom: .1em solid;
+            width: 3rem;
+
+            &[open] {
+                width: 15rem;
+            }
+
+            & .login__popup__summary {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
         }
 
         &[open] {
