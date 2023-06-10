@@ -69,7 +69,7 @@ function Login() {
 
       <details className="login__popup login__popup--left">
         <summary className='login__popup__summary'>Password trick</summary>
-        <p>When I write my name I always respect upper and lower case letters unless it is a password where I always use lower case letters.</p>
+        <p>When I write a name I always respect upper and lower case letters unless it is a password where I always use lower case letters.</p>
       </details>
 
     </div>
