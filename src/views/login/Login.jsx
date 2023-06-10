@@ -16,13 +16,13 @@ function Login() {
   const [showAlertPassword, setShowAlertPassword] = useState(false);
 
   function validateForm() {
-    if(userInput == 'Nora Dufort' && passwordInput == 'misifu') {
+    if(userInput == 'Nora Dufort' && passwordInput == 'Misifu') {
       setUserIsLogin(true);
     } else {
       if(userInput != 'Nora Dufort') {
         setShowAlertUser(true);
       }
-      if(passwordInput != 'misifu') {
+      if(passwordInput != 'Misifu') {
         setShowAlertPassword(true);
       }
     }
