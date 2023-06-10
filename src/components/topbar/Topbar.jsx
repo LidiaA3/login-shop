@@ -28,7 +28,7 @@ function Topbar(props) {
                     {props.userLogin && <p className='topbar__cart__number'>{props.numberAtCart}</p>}
                 </div>
 
-                {props.userLogin ? <Button type='ternary' text='Log out' handleClick={() => setUserIsLogin(false)} /> : (location === '/login' ? '' : <Link to='/login'>Log in</Link> )}
+                {props.userLogin ? <Button type='ternary' text='Log out' handleClick={() => setUserIsLogin(false)} /> : (location === '/login' ? '' : <Link onClick={handleGoTop} to='/login'>Log in</Link> )}
                 
                 {props.userLogin ? <div className="topbar__user">
                     <p>Hi Nora</p>

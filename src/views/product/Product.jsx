@@ -26,7 +26,7 @@ function Product() {
     const existProduct = productsAtCart.find(item => item.productId == id);
 
     if(existProduct) {
-      existProduct.amount =+ 1;
+      existProduct.amount += 1;
       setProductsAtCart([...productsAtCart])
     } else {
       const newProduct = {
