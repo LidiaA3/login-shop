@@ -16,13 +16,13 @@ function Login() {
   const [showAlertPassword, setShowAlertPassword] = useState(false);
 
   function validateForm() {
-    if(userInput == 'Nora Dufort' && passwordInput == 'Misifu') {
+    if(userInput == 'Nora Dufort' && passwordInput == 'misifu') {
       setUserIsLogin(true);
     } else {
       if(userInput != 'Nora Dufort') {
         setShowAlertUser(true);
       }
-      if(passwordInput != 'Misifu') {
+      if(passwordInput != 'misifu') {
         setShowAlertPassword(true);
       }
     }
@@ -62,9 +62,14 @@ function Login() {
         {showAlertPassword && <Alert text="The password doesn't match" close={setShowAlertPassword} />}
       </div>
 
-      <details className="login__popup">
+      <details className="login__popup login__popup--right">
         <summary className='login__popup__summary'>Show more</summary>
         <p>Hi! My name is Nora Dufort. I love cats and books. I have a cat named Misifu that represents my life.</p>
+      </details>
+
+      <details className="login__popup login__popup--left">
+        <summary className='login__popup__summary'>Password trick</summary>
+        <p>When I write my name I always respect upper and lower case letters unless it is a password where I always use lower case letters.</p>
       </details>
 
     </div>

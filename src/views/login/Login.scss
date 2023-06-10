@@ -16,7 +16,6 @@
     &__popup {
         position: absolute;
         bottom: 0;
-        right: 2rem;
         width: 15rem;
         padding: .5rem 2rem;
         border: .1em solid $color-blue-lighter;
@@ -24,6 +23,14 @@
         border-radius: .5em .5em 0 0;
         color: $color-blue-lighter;
         transition: all 1s ease-in-out;
+
+        &--right {
+            right: 2rem;
+        }
+
+        &--left {
+            left: 2rem;
+        }
 
         &[open] {
             padding: 2rem;
