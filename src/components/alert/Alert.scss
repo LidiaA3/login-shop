@@ -2,11 +2,11 @@
 @import '../../scss/functions';
 
 .alert {
-    position: absolute;
+    position: fixed;
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    top: 1rem;
+    top: 10rem;
     right: 0;
 
     &__item {
@@ -19,16 +19,27 @@
         border-right: none;
         border-radius: .5em 0 0 .5em;
         background-color: white;
-        animation: moveX 1s ease-in-out;
+        opacity: 0;
+        animation: moveX 5s ease-in-out;
+
+        & + & {
+            animation-delay: 500ms;
+        }
     }
 
     @keyframes moveX {
         0% {
             translate: 100%;
+            opacity: 0;
+        }
+
+        20% {
+            translate: 0%;
+            opacity: 1;
         }
 
         100% {
-            translate: 0%;
+            opacity: 1;
         }
     }
 

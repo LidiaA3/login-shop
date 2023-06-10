@@ -3,7 +3,7 @@ import './Alert.scss';
 function Alert (props) {
     setTimeout(() => {
         props.close(false);
-    }, 10000);
+    }, 5000);
 
     return (
         <div className="alert__item">
